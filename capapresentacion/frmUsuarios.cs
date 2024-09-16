@@ -122,7 +122,6 @@ namespace capapresentacion
                 e.Graphics.DrawImage(Properties.Resources.check20, new Rectangle(x,y,w,h));
                 e.Handled = true;
 
-
             }
 
 

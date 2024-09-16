@@ -111,14 +111,99 @@ namespace CapaDatos
 
 
             }
-
-
-
-
-
-
             return idusuariogenerado;
         }
+
+
+
+
+        public bool Editar(USUARIO obj, out string Mensaje)
+        {
+            bool respuesta = false;
+            Mensaje = string.Empty;
+
+            try
+            {
+
+
+                using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+                {
+
+
+                   SqlCommand cmd = new SqlCommand("PA_EditarUsuario", oconnection);
+                    cmd.Parameters.AddWithValue("idUSUARIO", obj.idUSUARIO);
+                    cmd.Parameters.AddWithValue("Documento", obj.Documento);
+                    cmd.Parameters.AddWithValue("NombreCompleto", obj.NombreCompleto);
+                    cmd.Parameters.AddWithValue("Correo", obj.Correo);
+                    cmd.Parameters.AddWithValue("Clave", obj.Clave);
+                    cmd.Parameters.AddWithValue("idROL", obj.oROL.idROL);
+                    cmd.Parameters.AddWithValue("Estado", obj.Estado);
+                    cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oconnection.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                respuesta = false;
+                Mensaje = ex.Message;
+
+
+            }
+
+            return respuesta;
+        }
+
+
+        public bool Eliminar(USUARIO obj, out string Mensaje)
+        {
+            bool respuesta = false;
+            Mensaje = string.Empty;
+
+            try
+            {
+
+
+                using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+                {
+
+
+                    SqlCommand cmd = new SqlCommand("PA_EliminarUsuario", oconnection);
+                    cmd.Parameters.AddWithValue("idUSUARIO", obj.idUSUARIO);
+                    cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oconnection.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                respuesta = false;
+                Mensaje = ex.Message;
+
+
+            }
+
+            return respuesta;
+        }
+
+
+
 
     }
 
