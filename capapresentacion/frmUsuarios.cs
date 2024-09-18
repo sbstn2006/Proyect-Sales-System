@@ -13,7 +13,6 @@ using capaentidad;
 using CapaNegocio;
 
 
-
 namespace capapresentacion
 {
     public partial class frmUsuarios : Form
@@ -23,10 +22,8 @@ namespace capapresentacion
             InitializeComponent();
         }
 
-
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-
             dgvdata.RightToLeft = RightToLeft.No;
 
             //opciones del combobox estado
@@ -45,16 +42,12 @@ namespace capapresentacion
             cboRol.DisplayMember = "Texto";
             cboRol.ValueMember = "Valor";
             cboRol.SelectedIndex = 0;
-
-
+            
             foreach (DataGridViewColumn columna in dgvdata.Columns)
             {
-
                 if (columna.Visible == true && columna.Name != "btnSeleccionar")
                 {
-
                     cbobusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
-
                 }
             }
             cbobusqueda.DisplayMember = "Texto";
@@ -66,8 +59,6 @@ namespace capapresentacion
 
             foreach (USUARIO item in listaUSUARIO)
             {
-
-
                 dgvdata.Rows.Add(new object[] {"",item.idUSUARIO, item.Documento, item.NombreCompleto, item.Correo, item.Clave,
                 item.oROL.idROL,
                 item.oROL.Descripcion,
@@ -75,10 +66,6 @@ namespace capapresentacion
                 item.Estado == true ? "Activo" : "Inactivo"
 
                 });
-
-
-
-
             }
         }
 
@@ -97,7 +84,6 @@ namespace capapresentacion
                 Estado = Convert.ToInt32(((OpcionCombo)cboEstado.SelectedItem).Valor) == 1 ? true : false
 
             };
-
             if (objusuario.idUSUARIO == 0)
             {
 
@@ -107,23 +93,22 @@ namespace capapresentacion
                 {
 
                     dgvdata.Rows.Add(new object[] {"",idUSUARIOgenerado, txtDocumento.Text, txtNombreCompleto.Text, txtCorreo.Text, txtClave.Text,
-              ((OpcionCombo) cboRol.SelectedItem).Valor.ToString(),
-              ((OpcionCombo) cboRol.SelectedItem).Texto.ToString(),
-              ((OpcionCombo) cboEstado.SelectedItem).Valor.ToString(),
-              ((OpcionCombo) cboEstado.SelectedItem).Texto.ToString()
+                      ((OpcionCombo) cboRol.SelectedItem).Valor.ToString(),
+                      ((OpcionCombo) cboRol.SelectedItem).Texto.ToString(),
+                      ((OpcionCombo) cboEstado.SelectedItem).Valor.ToString(),
+                      ((OpcionCombo) cboEstado.SelectedItem).Texto.ToString()
 
 
-                });
+                    });
                     Limpiar();
                 }
                 else
                 {
-
                     MessageBox.Show(mensaje);
                 }
-
             }
-            else {
+            else
+            {
                 bool resultado = new CN_USUARIO().Editar(objusuario, out mensaje);
                 if (resultado)
                 {
@@ -138,27 +123,16 @@ namespace capapresentacion
                     row.Cells["ROL"].Value = ((OpcionCombo)cboRol.SelectedItem).Texto.ToString();
                     row.Cells["EstadoValor"].Value = ((OpcionCombo)cboEstado.SelectedItem).Valor.ToString();
                     row.Cells["Estado"].Value = ((OpcionCombo)cboEstado.SelectedItem).Texto.ToString();
-
-
+                    
                     Limpiar();
                 }
                 else {
-
-
                     MessageBox.Show(mensaje);
-
                 }
-
-            }
-
-
-
-            
-
-            
+            }   
         }
 
-        //metodo para limpiar los datos de usuario cuando se guarde un nuevo usuario
+        
         private void Limpiar()
         {
             txtindice.Text = "-1";
@@ -172,14 +146,13 @@ namespace capapresentacion
             cboEstado.SelectedIndex = 0;
 
             txtDocumento.Select();
-        }
+        } //metodo para limpiar los datos de usuario cuando se guarde un nuevo usuario
 
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
                 return;
-
-
+            
             if (e.ColumnIndex == 0)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
@@ -193,10 +166,6 @@ namespace capapresentacion
                 e.Handled = true;
 
             }
-
-
-
-
         }
 
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -205,8 +174,7 @@ namespace capapresentacion
             {
 
                 int indice = e.RowIndex;
-
-
+                
                 if (indice >= 0)
                 {
 
@@ -229,21 +197,19 @@ namespace capapresentacion
 
                             break;
                         }         
-                    }             
-                                  
+                    }               
                     foreach (OpcionCombo oc in cboEstado.Items)
                     {             
                                  
-                         if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["EstadoValor"].Value))
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["EstadoValor"].Value))
                         {         
-                            int indice_combo = cboEstado.Items.IndexOf(oc);
-                                  
-                            cboEstado.SelectedIndex = indice_combo;
-                                  
-                            break;
-                        }
+                           int indice_combo = cboEstado.Items.IndexOf(oc);
+                                 
+                           cboEstado.SelectedIndex = indice_combo;
+                                 
+                           break;
+                        } 
                     }
-
                 }
             }
         }
@@ -274,6 +240,8 @@ namespace capapresentacion
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
+
+                    Limpiar();
                 }
             }
         }
@@ -306,15 +274,122 @@ namespace capapresentacion
             foreach (DataGridViewRow row in dgvdata.Rows) {
 
                 row.Visible = true;
-
-
             }
-
         }
 
         private void btnLimpiarDatos_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDocumento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombreCompleto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCorreo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtClave_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtConfirmarClave_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboRol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtid_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtindice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbobusqueda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtbusqueda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

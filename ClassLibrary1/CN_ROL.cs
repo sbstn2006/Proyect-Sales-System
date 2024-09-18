@@ -11,14 +11,12 @@ namespace CapaNegocio
 {
     public class CN_ROL
     {
-       
             private CD_ROL objCD_ROL = new CD_ROL();
 
             public List<ROL> Listar()
 
             {
                 return objCD_ROL.Listar();
-            }
-        
+            } 
     }
 }

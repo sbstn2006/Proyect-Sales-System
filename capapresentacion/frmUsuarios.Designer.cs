@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -80,6 +80,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(260, 497);
             this.label1.TabIndex = 0;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -90,6 +91,7 @@
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "No.Documento";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -100,6 +102,7 @@
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nombre Completo";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -110,6 +113,7 @@
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Correo";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtDocumento
             // 
@@ -118,6 +122,7 @@
             this.txtDocumento.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDocumento.Size = new System.Drawing.Size(184, 20);
             this.txtDocumento.TabIndex = 4;
+            this.txtDocumento.TextChanged += new System.EventHandler(this.txtDocumento_TextChanged);
             // 
             // txtNombreCompleto
             // 
@@ -126,6 +131,7 @@
             this.txtNombreCompleto.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtNombreCompleto.Size = new System.Drawing.Size(184, 20);
             this.txtNombreCompleto.TabIndex = 5;
+            this.txtNombreCompleto.TextChanged += new System.EventHandler(this.txtNombreCompleto_TextChanged);
             // 
             // txtCorreo
             // 
@@ -134,6 +140,7 @@
             this.txtCorreo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtCorreo.Size = new System.Drawing.Size(184, 20);
             this.txtCorreo.TabIndex = 6;
+            this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
             // 
             // txtClave
             // 
@@ -143,6 +150,7 @@
             this.txtClave.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtClave.Size = new System.Drawing.Size(184, 20);
             this.txtClave.TabIndex = 8;
+            this.txtClave.TextChanged += new System.EventHandler(this.txtClave_TextChanged);
             // 
             // label5
             // 
@@ -153,6 +161,7 @@
             this.label5.Size = new System.Drawing.Size(61, 13);
             this.label5.TabIndex = 7;
             this.label5.Text = "Contraseña";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtConfirmarClave
             // 
@@ -162,6 +171,7 @@
             this.txtConfirmarClave.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtConfirmarClave.Size = new System.Drawing.Size(184, 20);
             this.txtConfirmarClave.TabIndex = 10;
+            this.txtConfirmarClave.TextChanged += new System.EventHandler(this.txtConfirmarClave_TextChanged);
             // 
             // label6
             // 
@@ -172,6 +182,7 @@
             this.label6.Size = new System.Drawing.Size(108, 13);
             this.label6.TabIndex = 9;
             this.label6.Text = "Confirmar Contraseña";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -182,6 +193,7 @@
             this.label7.Size = new System.Drawing.Size(23, 13);
             this.label7.TabIndex = 11;
             this.label7.Text = "Rol";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // cboRol
             // 
@@ -192,6 +204,7 @@
             this.cboRol.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cboRol.Size = new System.Drawing.Size(184, 21);
             this.cboRol.TabIndex = 12;
+            this.cboRol.SelectedIndexChanged += new System.EventHandler(this.cboRol_SelectedIndexChanged);
             // 
             // cboEstado
             // 
@@ -202,6 +215,7 @@
             this.cboEstado.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cboEstado.Size = new System.Drawing.Size(184, 21);
             this.cboEstado.TabIndex = 13;
+            this.cboEstado.SelectedIndexChanged += new System.EventHandler(this.cboEstado_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -212,6 +226,7 @@
             this.label8.Size = new System.Drawing.Size(40, 13);
             this.label8.TabIndex = 14;
             this.label8.Text = "Estado";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -220,10 +235,11 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(36, 69);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(111, 20);
+            this.label9.Size = new System.Drawing.Size(133, 20);
             this.label9.TabIndex = 18;
-            this.label9.Text = "Datos Usuario";
+            this.label9.Text = "Datos del usuario";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // txtid
             // 
@@ -233,19 +249,20 @@
             this.txtid.TabIndex = 21;
             this.txtid.Text = "0";
             this.txtid.Visible = false;
+            this.txtid.TextChanged += new System.EventHandler(this.txtid_TextChanged);
             // 
             // dgvdata
             // 
             this.dgvdata.AllowUserToAddRows = false;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnSeleccionar,
@@ -262,11 +279,11 @@
             this.dgvdata.MultiSelect = false;
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.ReadOnly = true;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvdata.RowTemplate.Height = 28;
-            this.dgvdata.Size = new System.Drawing.Size(855, 310);
+            this.dgvdata.Size = new System.Drawing.Size(864, 310);
             this.dgvdata.TabIndex = 22;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
             this.dgvdata.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvdata_CellPainting);
@@ -276,7 +293,7 @@
             this.btnSeleccionar.HeaderText = "";
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.ReadOnly = true;
-            this.btnSeleccionar.Width = 30;
+            this.btnSeleccionar.Width = 40;
             // 
             // id
             // 
@@ -291,21 +308,21 @@
             this.Documento.HeaderText = "Numero Documento";
             this.Documento.Name = "Documento";
             this.Documento.ReadOnly = true;
-            this.Documento.Width = 150;
+            this.Documento.Width = 160;
             // 
             // NombreCompleto
             // 
             this.NombreCompleto.HeaderText = "Nombre Completo";
             this.NombreCompleto.Name = "NombreCompleto";
             this.NombreCompleto.ReadOnly = true;
-            this.NombreCompleto.Width = 180;
+            this.NombreCompleto.Width = 200;
             // 
             // Correo
             // 
             this.Correo.HeaderText = "Correo";
             this.Correo.Name = "Correo";
             this.Correo.ReadOnly = true;
-            this.Correo.Width = 150;
+            this.Correo.Width = 170;
             // 
             // Clave
             // 
@@ -326,6 +343,7 @@
             this.ROL.HeaderText = "Rol";
             this.ROL.Name = "ROL";
             this.ROL.ReadOnly = true;
+            this.ROL.Width = 150;
             // 
             // EstadoValor
             // 
@@ -348,9 +366,10 @@
             this.label10.Location = new System.Drawing.Point(283, 69);
             this.label10.Name = "label10";
             this.label10.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label10.Size = new System.Drawing.Size(853, 39);
+            this.label10.Size = new System.Drawing.Size(862, 39);
             this.label10.TabIndex = 23;
             this.label10.Text = "Lista de usuarios:";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
@@ -361,6 +380,7 @@
             this.label11.Size = new System.Drawing.Size(58, 13);
             this.label11.TabIndex = 24;
             this.label11.Text = "Buscar por";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // cbobusqueda
             // 
@@ -371,6 +391,7 @@
             this.cbobusqueda.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cbobusqueda.Size = new System.Drawing.Size(113, 21);
             this.cbobusqueda.TabIndex = 25;
+            this.cbobusqueda.SelectedIndexChanged += new System.EventHandler(this.cbobusqueda_SelectedIndexChanged);
             // 
             // txtbusqueda
             // 
@@ -379,6 +400,7 @@
             this.txtbusqueda.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtbusqueda.Size = new System.Drawing.Size(190, 20);
             this.txtbusqueda.TabIndex = 26;
+            this.txtbusqueda.TextChanged += new System.EventHandler(this.txtbusqueda_TextChanged);
             // 
             // btnLimpiarBuscador
             // 
@@ -487,6 +509,7 @@
             this.txtindice.TabIndex = 29;
             this.txtindice.Text = "-1";
             this.txtindice.Visible = false;
+            this.txtindice.TextChanged += new System.EventHandler(this.txtindice_TextChanged);
             // 
             // frmUsuarios
             // 
@@ -560,6 +583,7 @@
         private System.Windows.Forms.TextBox txtbusqueda;
         private FontAwesome.Sharp.IconButton btnLimpiarBuscador;
         private FontAwesome.Sharp.IconButton btnbuscar;
+        private System.Windows.Forms.TextBox txtindice;
         private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
@@ -570,6 +594,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ROL;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.TextBox txtindice;
     }
 }

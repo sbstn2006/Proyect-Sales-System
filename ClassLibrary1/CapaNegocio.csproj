@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CN_CATEGORIA.cs" />
     <Compile Include="CN_PERMISO.cs" />
     <Compile Include="CN_ROL.cs" />
     <Compile Include="CN_USUARIO.cs" />

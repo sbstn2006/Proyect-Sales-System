@@ -25,20 +25,15 @@ namespace CapaNegocio
 
             if (obj.Documento == "") {
                 Mensaje += "Es necesario el documento del usuario\n";
-
             }
             if (obj.NombreCompleto == "")
             {
                 Mensaje += "Es necesario el nombre del usuario del usuario\n";
-
             }
-
             if (obj.Clave == "")
             {
                 Mensaje += "Es necesaria la clave del usuario\n";
-
             }
-
             if (Mensaje != string.Empty)
             {
                 return 0;
@@ -48,8 +43,7 @@ namespace CapaNegocio
             }  
         }
 
-
-
+        
         public bool Editar(USUARIO obj, out string Mensaje)
         {
 
@@ -58,17 +52,14 @@ namespace CapaNegocio
             if (obj.Documento == "")
             {
                 Mensaje += "Es necesario el documento del usuario\n";
-
             }
             if (obj.NombreCompleto == "")
             {
                 Mensaje += "Es necesario el nombre del usuario del usuario\n";
-
             }
             if (obj.Clave == "")
             {
                 Mensaje += "Es necesaria la Clave del usuario\n";
-
             }
             if (Mensaje != string.Empty)
             {
@@ -77,17 +68,12 @@ namespace CapaNegocio
             else
             {
                 return objCD_USUARIO.Editar(obj, out Mensaje);
-            }
-
-
-           
+            }   
         }
 
         public bool Eliminar(USUARIO obj, out string Mensaje)
         {
             return objCD_USUARIO.Eliminar(obj, out Mensaje);
         }
-
-
     }
 }

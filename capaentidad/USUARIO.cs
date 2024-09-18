@@ -16,7 +16,5 @@ namespace capaentidad
         public ROL oROL { get; set; }
         public bool Estado { get; set; }
         public String FechaRegistro { get; set; }
-
-
     }
 }
