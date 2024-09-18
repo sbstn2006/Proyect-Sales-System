@@ -141,7 +141,6 @@ namespace capapresentacion
 
 
                     Limpiar();
-
                 }
                 else {
 
@@ -234,8 +233,8 @@ namespace capapresentacion
                                   
                     foreach (OpcionCombo oc in cboEstado.Items)
                     {             
-                                  
-                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["EstadoValor"].Value))
+                                 
+                         if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["EstadoValor"].Value))
                         {         
                             int indice_combo = cboEstado.Items.IndexOf(oc);
                                   
@@ -261,9 +260,7 @@ namespace capapresentacion
                     string mensaje = string.Empty;
                     USUARIO objusuario = new USUARIO()
                     {
-
                         idUSUARIO = Convert.ToInt32(txtid.Text),
-
                     };
 
 
@@ -271,20 +268,14 @@ namespace capapresentacion
 
                     if (respuesta)
                     {
-
-                        dgvdata.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
-
-                        
+                        dgvdata.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));   
                     }
                     else
                     {
-
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
                     }
                 }
             }
         }
-      
     }
 }
