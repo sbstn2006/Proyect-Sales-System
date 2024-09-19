@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CD_CATEGORIA.cs" />
+    <Compile Include="CD_CLIENTE.cs" />
     <Compile Include="CD_PERMISO.cs" />
     <Compile Include="CD_PRODUCTO.cs" />
     <Compile Include="CD_ROL.cs" />

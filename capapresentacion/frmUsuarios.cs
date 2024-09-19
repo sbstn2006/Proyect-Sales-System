@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using capapresentacion.Utilidades;
 using capaentidad;
 using CapaNegocio;
-
+using ClosedXML.Excel;
 
 namespace capapresentacion
 {
@@ -279,6 +279,67 @@ namespace capapresentacion
         private void btnLimpiarDatos_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            if (dgvdata.Rows.Count < 1)
+            {
+
+                MessageBox.Show("No hay datos para exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+
+
+                foreach (DataGridViewColumn columna in dgvdata.Columns)
+                {
+                    if (columna.HeaderText != "" && columna.Visible)
+                        dt.Columns.Add(columna.HeaderText, typeof(string));
+                }
+
+                foreach (DataGridViewRow row in dgvdata.Rows)
+                {
+                    if (row.Visible)
+                        dt.Rows.Add(new object[] {
+                            
+                            row.Cells[2].Value.ToString(),
+                            row.Cells[3].Value.ToString(),
+                            row.Cells[4].Value.ToString(),
+                            row.Cells[7].Value.ToString(),
+                            row.Cells[9].Value.ToString()
+
+
+                        });
+
+
+                }
+                SaveFileDialog savefile = new SaveFileDialog();
+                savefile.FileName = string.Format("ReporteProducto_{0}.xslx", DateTime.Now.ToString("ddMMyyyyHHmmss"));
+                savefile.Filter = "Excel Files | *.xlsx";
+
+                if (savefile.ShowDialog() == DialogResult.OK)
+                {
+
+                    try
+                    {
+                        XLWorkbook wb = new XLWorkbook();
+                        var hoja = wb.Worksheets.Add(dt, "Informe");
+                        hoja.ColumnsUsed().AdjustToContents();
+                        wb.SaveAs(savefile.FileName);
+                        MessageBox.Show("Reporte Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+
+                }
+
+
+            }
         }
     }
 }
