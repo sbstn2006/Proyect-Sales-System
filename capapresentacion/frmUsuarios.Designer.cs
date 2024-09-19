@@ -80,7 +80,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(260, 497);
             this.label1.TabIndex = 0;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+           
             // 
             // label2
             // 
@@ -91,7 +91,7 @@
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "No.Documento";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+     
             // 
             // label3
             // 
@@ -102,7 +102,7 @@
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nombre Completo";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+           
             // 
             // label4
             // 
@@ -113,7 +113,7 @@
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Correo";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+           
             // 
             // txtDocumento
             // 
@@ -122,7 +122,7 @@
             this.txtDocumento.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDocumento.Size = new System.Drawing.Size(184, 20);
             this.txtDocumento.TabIndex = 4;
-            this.txtDocumento.TextChanged += new System.EventHandler(this.txtDocumento_TextChanged);
+           
             // 
             // txtNombreCompleto
             // 
@@ -131,7 +131,7 @@
             this.txtNombreCompleto.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtNombreCompleto.Size = new System.Drawing.Size(184, 20);
             this.txtNombreCompleto.TabIndex = 5;
-            this.txtNombreCompleto.TextChanged += new System.EventHandler(this.txtNombreCompleto_TextChanged);
+           
             // 
             // txtCorreo
             // 
@@ -140,7 +140,6 @@
             this.txtCorreo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtCorreo.Size = new System.Drawing.Size(184, 20);
             this.txtCorreo.TabIndex = 6;
-            this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
             // 
             // txtClave
             // 
@@ -150,7 +149,6 @@
             this.txtClave.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtClave.Size = new System.Drawing.Size(184, 20);
             this.txtClave.TabIndex = 8;
-            this.txtClave.TextChanged += new System.EventHandler(this.txtClave_TextChanged);
             // 
             // label5
             // 
@@ -161,7 +159,6 @@
             this.label5.Size = new System.Drawing.Size(61, 13);
             this.label5.TabIndex = 7;
             this.label5.Text = "Contraseña";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtConfirmarClave
             // 
@@ -171,7 +168,6 @@
             this.txtConfirmarClave.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtConfirmarClave.Size = new System.Drawing.Size(184, 20);
             this.txtConfirmarClave.TabIndex = 10;
-            this.txtConfirmarClave.TextChanged += new System.EventHandler(this.txtConfirmarClave_TextChanged);
             // 
             // label6
             // 
@@ -182,7 +178,6 @@
             this.label6.Size = new System.Drawing.Size(108, 13);
             this.label6.TabIndex = 9;
             this.label6.Text = "Confirmar Contraseña";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -193,7 +188,6 @@
             this.label7.Size = new System.Drawing.Size(23, 13);
             this.label7.TabIndex = 11;
             this.label7.Text = "Rol";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // cboRol
             // 
@@ -204,7 +198,6 @@
             this.cboRol.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cboRol.Size = new System.Drawing.Size(184, 21);
             this.cboRol.TabIndex = 12;
-            this.cboRol.SelectedIndexChanged += new System.EventHandler(this.cboRol_SelectedIndexChanged);
             // 
             // cboEstado
             // 
@@ -215,7 +208,6 @@
             this.cboEstado.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cboEstado.Size = new System.Drawing.Size(184, 21);
             this.cboEstado.TabIndex = 13;
-            this.cboEstado.SelectedIndexChanged += new System.EventHandler(this.cboEstado_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -226,7 +218,6 @@
             this.label8.Size = new System.Drawing.Size(40, 13);
             this.label8.TabIndex = 14;
             this.label8.Text = "Estado";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -239,7 +230,6 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Datos del usuario";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // txtid
             // 
@@ -249,7 +239,6 @@
             this.txtid.TabIndex = 21;
             this.txtid.Text = "0";
             this.txtid.Visible = false;
-            this.txtid.TextChanged += new System.EventHandler(this.txtid_TextChanged);
             // 
             // dgvdata
             // 
@@ -369,7 +358,6 @@
             this.label10.Size = new System.Drawing.Size(862, 39);
             this.label10.TabIndex = 23;
             this.label10.Text = "Lista de usuarios:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
@@ -380,7 +368,6 @@
             this.label11.Size = new System.Drawing.Size(58, 13);
             this.label11.TabIndex = 24;
             this.label11.Text = "Buscar por";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // cbobusqueda
             // 
@@ -391,7 +378,6 @@
             this.cbobusqueda.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cbobusqueda.Size = new System.Drawing.Size(113, 21);
             this.cbobusqueda.TabIndex = 25;
-            this.cbobusqueda.SelectedIndexChanged += new System.EventHandler(this.cbobusqueda_SelectedIndexChanged);
             // 
             // txtbusqueda
             // 
@@ -400,7 +386,6 @@
             this.txtbusqueda.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtbusqueda.Size = new System.Drawing.Size(190, 20);
             this.txtbusqueda.TabIndex = 26;
-            this.txtbusqueda.TextChanged += new System.EventHandler(this.txtbusqueda_TextChanged);
             // 
             // btnLimpiarBuscador
             // 
@@ -509,7 +494,6 @@
             this.txtindice.TabIndex = 29;
             this.txtindice.Text = "-1";
             this.txtindice.Visible = false;
-            this.txtindice.TextChanged += new System.EventHandler(this.txtindice_TextChanged);
             // 
             // frmUsuarios
             // 

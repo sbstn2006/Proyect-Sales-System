@@ -109,8 +109,8 @@ namespace capapresentacion
             }
             else
             {
-                bool resultado = new CN_USUARIO().Editar(objusuario, out mensaje);
-                if (resultado)
+                bool arroz = new CN_USUARIO().Editar(objusuario, out mensaje);
+                if (arroz)
                 {
 
                     DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindice.Text)];
@@ -177,7 +177,6 @@ namespace capapresentacion
                 
                 if (indice >= 0)
                 {
-
                     txtindice.Text = indice.ToString();
                     txtid.Text = dgvdata.Rows[indice].Cells["id"].Value.ToString();
                     txtDocumento.Text = dgvdata.Rows[indice].Cells["Documento"].Value.ToString();
@@ -280,116 +279,6 @@ namespace capapresentacion
         private void btnLimpiarDatos_Click(object sender, EventArgs e)
         {
             Limpiar();
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDocumento_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNombreCompleto_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCorreo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtClave_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtConfirmarClave_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboRol_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtid_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtindice_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbobusqueda_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtbusqueda_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
