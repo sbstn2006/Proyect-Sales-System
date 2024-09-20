@@ -28,7 +28,7 @@ namespace CapaNegocio
             }
             if (obj.NombreCompleto == "")
             {
-                Mensaje += "Es necesario el nombre del usuario del usuario\n";
+                Mensaje += "Es necesario el nombre del usuario\n";
             }
             if (obj.Clave == "")
             {
@@ -55,7 +55,7 @@ namespace CapaNegocio
             }
             if (obj.NombreCompleto == "")
             {
-                Mensaje += "Es necesario el nombre del usuario del usuario\n";
+                Mensaje += "Es necesario el nombre del usuario\n";
             }
             if (obj.Clave == "")
             {

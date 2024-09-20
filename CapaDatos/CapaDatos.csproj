@@ -46,6 +46,7 @@
     <Compile Include="CD_CLIENTE.cs" />
     <Compile Include="CD_PERMISO.cs" />
     <Compile Include="CD_PRODUCTO.cs" />
+    <Compile Include="CD_PROVEEDOR.cs" />
     <Compile Include="CD_ROL.cs" />
     <Compile Include="conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
