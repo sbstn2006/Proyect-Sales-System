@@ -109,8 +109,8 @@ namespace capapresentacion
             }
             else
             {
-                bool arroz = new CN_USUARIO().Editar(objusuario, out mensaje);
-                if (arroz)
+                bool resultado = new CN_USUARIO().Editar(objusuario, out mensaje);
+                if (resultado)
                 {
 
                     DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindice.Text)];

@@ -62,7 +62,6 @@ namespace CapaDatos
             {
                 using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
                 {
-
                     SqlCommand cmd = new SqlCommand("PA_RegistrarUsuario", oconnection);
                     cmd.Parameters.AddWithValue("Documento", obj.Documento);
                     cmd.Parameters.AddWithValue("NombreCompleto", obj.NombreCompleto);

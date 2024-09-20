@@ -36,6 +36,7 @@ namespace CapaDatos
                                 idCLIENTE = Convert.ToInt32(dr["idCLIENTE"]),
                                 Documento = dr["Documento"].ToString(),
                                 NombreCompleto = dr["NombreCompleto"].ToString(),
+                                Correo = dr["Correo"].ToString(),
                                 Telefono = dr["Telefono"].ToString(),
                                 Estado = Convert.ToBoolean(dr["Estado"]),
                             });
