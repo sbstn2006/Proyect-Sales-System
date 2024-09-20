@@ -18,7 +18,7 @@ namespace CapaDatos
             List<PERMISO> lista = new List<PERMISO>();
 
 
-            using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+            using (SqlConnection oconnection = new SqlConnection(Conexion.cadena))
             {
 
                 try

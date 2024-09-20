@@ -7,7 +7,7 @@ using System.Configuration;
 
 namespace CapaDatos
 {
-    public class conexion
+    public class Conexion
     {
         public static string cadena = ConfigurationManager.ConnectionStrings["cadena_conexion"].ToString();
 

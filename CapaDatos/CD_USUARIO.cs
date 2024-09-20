@@ -15,7 +15,7 @@ namespace CapaDatos
         {
             List<USUARIO> lista = new List<USUARIO>();
             
-            using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+            using (SqlConnection oconnection = new SqlConnection(Conexion.cadena))
             {
                 try
                 {
@@ -60,7 +60,7 @@ namespace CapaDatos
 
             try
             {
-                using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+                using (SqlConnection oconnection = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("PA_RegistrarUsuario", oconnection);
                     cmd.Parameters.AddWithValue("Documento", obj.Documento);
@@ -97,7 +97,7 @@ namespace CapaDatos
 
             try
             {
-                using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+                using (SqlConnection oconnection = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("PA_EditarUsuario", oconnection);
                     cmd.Parameters.AddWithValue("idUSUARIO", obj.idUSUARIO);
@@ -136,7 +136,7 @@ namespace CapaDatos
 
             try
             {
-                using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+                using (SqlConnection oconnection = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("PA_EliminarUsuario", oconnection);
                     cmd.Parameters.AddWithValue("idUSUARIO", obj.idUSUARIO);

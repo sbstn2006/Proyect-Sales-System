@@ -15,7 +15,7 @@ namespace CapaDatos
         {
             List<CATEGORIA> lista = new List<CATEGORIA>();
             
-            using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+            using (SqlConnection oconnection = new SqlConnection(Conexion.cadena))
             {
                 try
                 {
@@ -56,7 +56,7 @@ namespace CapaDatos
 
             try
             {
-                using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+                using (SqlConnection oconnection = new SqlConnection(Conexion.cadena))
                 {
 
                     SqlCommand cmd = new SqlCommand("PA_RegistrarCategoria", oconnection);
@@ -90,7 +90,7 @@ namespace CapaDatos
 
             try
             {
-                using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+                using (SqlConnection oconnection = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("PA_EditarCategoria", oconnection);
                     cmd.Parameters.AddWithValue("IdCategoria", obj.idCATEGORIA);
@@ -125,7 +125,7 @@ namespace CapaDatos
 
             try
             {
-                using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+                using (SqlConnection oconnection = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("PA_EliminarCategoria", oconnection);
                     cmd.Parameters.AddWithValue("idCATEGORIA", obj.idCATEGORIA);

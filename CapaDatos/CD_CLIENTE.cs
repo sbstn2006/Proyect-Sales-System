@@ -15,7 +15,7 @@ namespace CapaDatos
         {
             List<CLIENTE> lista = new List<CLIENTE>();
 
-            using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+            using (SqlConnection oconnection = new SqlConnection(Conexion.cadena))
             {
                 try
                 {
@@ -59,7 +59,7 @@ namespace CapaDatos
 
             try
             {
-                using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+                using (SqlConnection oconnection = new SqlConnection(Conexion.cadena))
                 {
 
                     SqlCommand cmd = new SqlCommand("PA_RegistrarCliente", oconnection);
@@ -96,7 +96,7 @@ namespace CapaDatos
 
             try
             {
-                using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+                using (SqlConnection oconnection = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("PA_EditarCliente", oconnection);
                     cmd.Parameters.AddWithValue("idCliente", obj.idCLIENTE);
@@ -134,7 +134,7 @@ namespace CapaDatos
 
             try
             {
-                using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+                using (SqlConnection oconnection = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("delete from Cliente where idCLIENTE = @id", oconnection);
                     cmd.Parameters.AddWithValue("@id", obj.idCLIENTE);

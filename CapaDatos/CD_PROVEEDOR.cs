@@ -15,7 +15,7 @@ namespace CapaDatos
         {
             List<PROVEEDOR> lista = new List<PROVEEDOR>();
 
-            using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+            using (SqlConnection oconnection = new SqlConnection(Conexion.cadena))
             {
                 try
                 {
@@ -58,7 +58,7 @@ namespace CapaDatos
 
             try
             {
-                using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+                using (SqlConnection oconnection = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("PA_RegistrarProveedor", oconnection);
                     cmd.Parameters.AddWithValue("Documento", obj.Documento);
@@ -94,7 +94,7 @@ namespace CapaDatos
 
             try
             {
-                using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+                using (SqlConnection oconnection = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("PA_EditarProveedor", oconnection);
                     cmd.Parameters.AddWithValue("idPROVEEDOR", obj.idPROVEEDOR);
@@ -132,7 +132,7 @@ namespace CapaDatos
 
             try
             {
-                using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+                using (SqlConnection oconnection = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("PA_EliminarProveedor", oconnection);
                     cmd.Parameters.AddWithValue("idPROVEEDOR", obj.idPROVEEDOR);

@@ -51,6 +51,7 @@
     </Compile>
     <Compile Include="DETALLE_COMPRA.cs" />
     <Compile Include="DETALLE_VENTA.cs" />
+    <Compile Include="NEGOCIO.cs" />
     <Compile Include="PERMISO.cs" />
     <Compile Include="PRODUCTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

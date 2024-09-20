@@ -44,11 +44,12 @@
   <ItemGroup>
     <Compile Include="CD_CATEGORIA.cs" />
     <Compile Include="CD_CLIENTE.cs" />
+    <Compile Include="CD_NEGOCIO.cs" />
     <Compile Include="CD_PERMISO.cs" />
     <Compile Include="CD_PRODUCTO.cs" />
     <Compile Include="CD_PROVEEDOR.cs" />
     <Compile Include="CD_ROL.cs" />
-    <Compile Include="conexion.cs" />
+    <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CD_USUARIO.cs" />
   </ItemGroup>

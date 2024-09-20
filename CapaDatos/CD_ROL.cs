@@ -16,7 +16,7 @@ namespace CapaDatos
         {
             List<ROL> lista = new List<ROL>();
 
-            using (SqlConnection oconnection = new SqlConnection(conexion.cadena))
+            using (SqlConnection oconnection = new SqlConnection(Conexion.cadena))
             {
                 try
                 {

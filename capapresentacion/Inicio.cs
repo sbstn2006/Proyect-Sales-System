@@ -174,5 +174,10 @@ namespace capapresentacion
         {
             AbrirFormulario((IconMenuItem)sender, new frmProveedores());
         }
+
+        private void submenuNegocio_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MenuMantenedor, new frmNegocio());
+        }
     }
 }
