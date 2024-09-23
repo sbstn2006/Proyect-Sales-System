@@ -30,8 +30,6 @@ namespace capapresentacion
         {
             {
 
-                List<USUARIO> TEST = new CN_USUARIO().Listar();
-
 
                 USUARIO oUSUARIO = new CN_USUARIO().Listar().Where(u => u.Documento == txtdocumento.Text
                 && u.Clave == txtclave.Text).FirstOrDefault();
@@ -64,6 +62,11 @@ namespace capapresentacion
             txtdocumento.Text = "";
             txtclave.Text = "";
             this.Show();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -341,5 +341,15 @@ namespace capapresentacion
 
             }
         }
+
+        private void cboEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboRol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
