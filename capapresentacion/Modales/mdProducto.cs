@@ -13,18 +13,20 @@ using System.Windows.Forms;
 
 namespace capapresentacion.Modales
 {
-    public partial class mdProveedor : Form
+    public partial class mdProducto : Form
     {
-        public PROVEEDOR _Proveedor {get; set;}
 
+        public PRODUCTO _Producto { get; set; }
+        
 
-        public mdProveedor()
+        public mdProducto()
         {
             InitializeComponent();
         }
 
-        private void mdProveedor_Load(object sender, EventArgs e)
+        private void mdProducto_Load(object sender, EventArgs e)
         {
+
             foreach (DataGridViewColumn columna in dgvdata.Columns)
             {
                 if (columna.Visible == true)
@@ -36,14 +38,26 @@ namespace capapresentacion.Modales
             cbobusqueda.ValueMember = "Valor";
             cbobusqueda.SelectedIndex = 0;
 
-            //mostrar todos los clientes
-            List<PROVEEDOR> lista = new CN_PROVEEDOR().Listar();
+            //mostrar todos los productos
+            List<PRODUCTO> lista = new CN_PRODUCTO().Listar();
 
-            foreach (PROVEEDOR item in lista)
+            foreach (PRODUCTO item in lista)
             {
-                dgvdata.Rows.Add(new object[] {item.idPROVEEDOR,item.Documento, item.RazonSocial
+                dgvdata.Rows.Add(new object[] {
+                    item.idPRODUCTO,
+                    item.Codigo,
+                    item.Nombre,
+                    item.oCATEGORIA.Descripcion,
+                    item.Stock,
+                    item.PrecioCompra,
+                    item.PrecioVenta
+
                 });
             }
+
+
+
+
         }
 
         private void dgvdata_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -54,13 +68,16 @@ namespace capapresentacion.Modales
             if (iRow >= 0 && iColum > 0)
             {
 
-                _Proveedor = new PROVEEDOR() {
-                    idPROVEEDOR = Convert.ToInt32(dgvdata.Rows[iRow].Cells["id"].Value.ToString()),
-                    Documento = dgvdata.Rows[iRow].Cells["Documento"].Value.ToString(),
-                    RazonSocial = dgvdata.Rows[iRow].Cells["RazonSocial"].Value.ToString()
+                _Producto = new PRODUCTO()
+                {
+                    idPRODUCTO = Convert.ToInt32(dgvdata.Rows[iRow].Cells["id"].Value.ToString()),
+                    Codigo = dgvdata.Rows[iRow].Cells["Codigo"].Value.ToString(),
+                    Nombre = dgvdata.Rows[iRow].Cells["Nombre"].Value.ToString(),
+                    Stock = Convert.ToInt32(dgvdata.Rows[iRow].Cells["Stock"].Value.ToString()),
+                    PrecioCompra = Convert.ToDecimal(dgvdata.Rows[iRow].Cells["PrecioCompra"].Value.ToString()),
+                    PrecioVenta = Convert.ToDecimal(dgvdata.Rows[iRow].Cells["PrecioVenta"].Value.ToString())
 
                 };
-
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
