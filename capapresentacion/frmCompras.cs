@@ -176,5 +176,171 @@ namespace capapresentacion
             }
             txtTotalPagar.Text = total.ToString("0.00");
         }
+
+        private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvdata.Columns[e.ColumnIndex].Name == "btnEliminar")
+            {
+
+                int indice = e.RowIndex;
+
+                if (indice >= 0)
+                {
+                    dgvdata.Rows.RemoveAt(indice);
+                    calcularTotal();
+                }
+            }
+        }
+
+        private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            if (e.ColumnIndex == 6)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = Properties.Resources.delete25.Width;
+                var h = Properties.Resources.delete25.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.delete25, new Rectangle(x, y, w, h));
+                e.Handled = true;
+
+            }
+        }
+
+        private void txtPrecioCompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else
+            {
+                if (txtPrecioCompra.Text.Trim().Length == 0 && e.KeyChar.ToString() == ".")
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    if (Char.IsControl(e.KeyChar) || e.KeyChar.ToString() == ",")
+                    {
+                        e.Handled = false;
+
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
+
+        private void txtPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+
+            }
+            else
+            {
+                if (txtPrecioVenta.Text.Trim().Length == 0 && e.KeyChar.ToString() == ".")
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    if (Char.IsControl(e.KeyChar) || e.KeyChar.ToString() == ",")
+                    {
+                        e.Handled = false;
+
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtidproveedor.Text) == 0)
+            {
+                MessageBox.Show("Debe seleccionar un proveedor", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+            }
+            if (dgvdata.Rows.Count < 1)
+            {
+                MessageBox.Show("Debe ingrersar productos en la compra", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+            }
+
+            DataTable detalle_compra = new DataTable();
+
+            detalle_compra.Columns.Add("idPRODUCTO", typeof(int));
+            detalle_compra.Columns.Add("PrecioCompra", typeof(decimal));
+            detalle_compra.Columns.Add("PrecioVenta", typeof(decimal));
+            detalle_compra.Columns.Add("Cantidad", typeof(int));
+            detalle_compra.Columns.Add("MontoTotal", typeof(decimal));
+
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                detalle_compra.Rows.Add(
+                    new object[] {
+                      Convert.ToInt32  (row.Cells["id"].Value.ToString()),
+                      row.Cells["PrecioCompra"].Value.ToString(),
+                      row.Cells["PrecioVenta"].Value.ToString(),
+                      row.Cells["Cantidad"].Value.ToString(),
+                      row.Cells["SubTotal"].Value.ToString()
+                    });
+                
+            }
+            int idcorrelativo = new CN_COMPRA().ObtenerCorrelativo();
+            string numerodocumento = string.Format("{0:00000}", idcorrelativo);
+
+            COMPRA oCompra = new COMPRA()
+            {
+
+                oUSUARIO = new USUARIO() { idUSUARIO = _Usuario.idUSUARIO },
+                oPROVEEDOR = new PROVEEDOR { idPROVEEDOR = Convert.ToInt32(txtidproveedor.Text)},
+                TipoDocumento = ((OpcionCombo) cboDocumento.SelectedItem).Texto,
+                NumeroDocumento = numerodocumento,
+                MontoTotal = Convert.ToDecimal(txtTotalPagar.Text)
+            };
+            string mensaje = string.Empty;
+            bool respuesta = new CN_COMPRA().Registrar(oCompra, detalle_compra, out mensaje);
+
+            if (respuesta)
+            {
+                var result = MessageBox.Show("Número de compra generado:\n" + numerodocumento + "\n\n¿Desea copiar al portpapeles?"
+                    , "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (result == DialogResult.Yes)
+                {
+                    Clipboard.SetText(numerodocumento);
+
+                    txtidproveedor.Text = "0";
+                    txtDocumentoProveedor.Text = "";
+                    txtNombreProveedor.Text = "";
+                    dgvdata.Rows.Clear();
+                    calcularTotal();
+
+                }
+                
+            }
+            else
+            {
+
+                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+
+            }
+        }
     }
 }
