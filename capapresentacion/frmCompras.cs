@@ -28,7 +28,7 @@ namespace capapresentacion
 
         private void frmCompras_Load(object sender, EventArgs e)
         {
-            //opciones del combobox estado
+            //opciones del combobox tipo de documento
             cboDocumento.Items.Add(new OpcionCombo() { Valor = "Boleta", Texto = "Boleta" });
             cboDocumento.Items.Add(new OpcionCombo() { Valor = "Factura", Texto = "Factura" });
             cboDocumento.DisplayMember = "Texto";
