@@ -10,9 +10,8 @@ namespace capaentidad
     {
         public int idDETALLE_VENTA { get; set; }
         public PRODUCTO oPRODUCTO { get; set; }
-        
         public decimal PrecioVenta { get; set; }
-        public string Cantidad { get; set; }
+        public int Cantidad { get; set; }
         public decimal SubTotal { get; set; }
         public String FechaRegistro { get; set; }
     }
