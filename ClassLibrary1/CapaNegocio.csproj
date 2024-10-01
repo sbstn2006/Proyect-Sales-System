@@ -50,6 +50,7 @@
     <Compile Include="CN_PROVEEDOR.cs" />
     <Compile Include="CN_ROL.cs" />
     <Compile Include="CN_USUARIO.cs" />
+    <Compile Include="CN_VENTA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

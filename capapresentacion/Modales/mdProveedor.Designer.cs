@@ -32,14 +32,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvdata = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtbusqueda = new System.Windows.Forms.TextBox();
             this.cbobusqueda = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnLimpiarBuscador = new FontAwesome.Sharp.IconButton();
             this.btnbuscar = new FontAwesome.Sharp.IconButton();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +64,7 @@
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -86,6 +86,25 @@
             this.dgvdata.Size = new System.Drawing.Size(483, 301);
             this.dgvdata.TabIndex = 106;
             this.dgvdata.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellDoubleClick);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "ID ";
+            this.id.Name = "id";
+            this.id.Visible = false;
+            this.id.Width = 30;
+            // 
+            // Documento
+            // 
+            this.Documento.HeaderText = "Numero Documento";
+            this.Documento.Name = "Documento";
+            this.Documento.Width = 160;
+            // 
+            // RazonSocial
+            // 
+            this.RazonSocial.HeaderText = "Razon social";
+            this.RazonSocial.Name = "RazonSocial";
+            this.RazonSocial.Width = 200;
             // 
             // txtbusqueda
             // 
@@ -150,25 +169,6 @@
             this.btnbuscar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnbuscar.UseVisualStyleBackColor = false;
             this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID ";
-            this.id.Name = "id";
-            this.id.Visible = false;
-            this.id.Width = 30;
-            // 
-            // Documento
-            // 
-            this.Documento.HeaderText = "Numero Documento";
-            this.Documento.Name = "Documento";
-            this.Documento.Width = 160;
-            // 
-            // RazonSocial
-            // 
-            this.RazonSocial.HeaderText = "Razon social";
-            this.RazonSocial.Name = "RazonSocial";
-            this.RazonSocial.Width = 200;
             // 
             // mdProveedor
             // 

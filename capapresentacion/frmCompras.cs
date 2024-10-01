@@ -221,7 +221,7 @@ namespace capapresentacion
             }
             else
             {
-                if (txtPrecioCompra.Text.Trim().Length == 0 && e.KeyChar.ToString() == ".")
+                if (txtPrecioCompra.Text.Trim().Length == 0 && e.KeyChar.ToString() == ",")
                 {
                     e.Handled = true;
                 }
@@ -249,7 +249,7 @@ namespace capapresentacion
             }
             else
             {
-                if (txtPrecioVenta.Text.Trim().Length == 0 && e.KeyChar.ToString() == ".")
+                if (txtPrecioVenta.Text.Trim().Length == 0 && e.KeyChar.ToString() == ",")
                 {
                     e.Handled = true;
                 }

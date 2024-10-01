@@ -36,7 +36,7 @@ namespace capapresentacion.Modales
             cbobusqueda.ValueMember = "Valor";
             cbobusqueda.SelectedIndex = 0;
 
-            //mostrar todos los clientes
+            //mostrar todos los proveedores
             List<PROVEEDOR> lista = new CN_PROVEEDOR().Listar();
 
             foreach (PROVEEDOR item in lista)
