@@ -61,6 +61,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="PROVEEDOR.cs" />
+    <Compile Include="REPORTE_COMPRA.cs" />
+    <Compile Include="REPORTE_VENTA.cs" />
     <Compile Include="ROL.cs" />
     <Compile Include="USUARIO.cs" />
     <Compile Include="VENTA.cs" />

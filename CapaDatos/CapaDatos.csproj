@@ -49,6 +49,7 @@
     <Compile Include="CD_PERMISO.cs" />
     <Compile Include="CD_PRODUCTO.cs" />
     <Compile Include="CD_PROVEEDOR.cs" />
+    <Compile Include="CD_REPORTE.cs" />
     <Compile Include="CD_ROL.cs" />
     <Compile Include="CD_VENTA.cs" />
     <Compile Include="Conexion.cs" />

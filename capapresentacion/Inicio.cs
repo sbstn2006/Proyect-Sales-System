@@ -64,12 +64,6 @@ namespace capapresentacion
 
         }
 
-
-        private void iconMenuItem1_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario((IconMenuItem)sender, new frmReportes());
-        }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -178,6 +172,16 @@ namespace capapresentacion
         private void submenuNegocio_Click(object sender, EventArgs e)
         {
             AbrirFormulario(MenuMantenedor, new frmNegocio());
+        }
+
+        private void submenureportecompra_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MenuReportes, new frmReporteCompras());
+        }
+
+        private void submenureporteventa_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MenuReportes, new frmReporteVenta());
         }
     }
 }
