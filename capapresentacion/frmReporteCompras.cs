@@ -168,7 +168,6 @@ namespace capapresentacion
 
                     if (row.Cells[columnafiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
                     {
-
                         row.Visible = true;
                     }
                     else
@@ -183,9 +182,12 @@ namespace capapresentacion
 
             foreach (DataGridViewRow row in dgvdata.Rows)
             {
-
                 row.Visible = true;
             }
+
+
+
+
         }
     }
 }

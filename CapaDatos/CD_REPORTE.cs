@@ -71,8 +71,8 @@ namespace CapaDatos
 
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
             {
-                try
-                {
+                //try
+                //{
                     StringBuilder query = new StringBuilder();
                     SqlCommand cmd = new SqlCommand("PA_ReporteVentas", oconexion);
                     cmd.Parameters.AddWithValue("fechainicio", fechainicio);
@@ -89,7 +89,7 @@ namespace CapaDatos
                             lista.Add(new REPORTE_VENTA()
                             {
                                 FechaRegistro = dr["FechaRegistro"].ToString(),
-                                TipoDocumento = dr["TipoDocuento"].ToString(),
+                                TipoDocumento = dr["TipoDocumento"].ToString(),
                                 NumeroDocumento = dr["NumeroDocumento"].ToString(),
                                 MontoTotal = dr["MontoTotal"].ToString(),
                                 UsuarioRegistro = dr["UsuarioRegistro"].ToString(),
@@ -105,11 +105,11 @@ namespace CapaDatos
                             });
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    lista = new List<REPORTE_VENTA>();
-                }
+                //}
+                //catch (Exception ex)
+                //{
+                //    lista = new List<REPORTE_VENTA>();
+                //}
             }
             return lista;
         }
