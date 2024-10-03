@@ -190,39 +190,39 @@ namespace CapaDatos
             List<DETALLE_VENTA> oLista = new List<DETALLE_VENTA>();
 
             using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
-            {
-                try
-                {
-                    conexion.Open();
-                    StringBuilder query = new StringBuilder();
-                    query.AppendLine("select p.Nombre, dv.PrecioVenta, dv.Cantidad, dv.SubTotal from DETALLE_VENTA dv");
-                    query.AppendLine("inner join PRODUCTO p on p.idPRODUCTO = dv.idPRODUCTO");
-                    query.AppendLine("where dv.idVENTA = @idventa");
-
-                    SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
-                    cmd.Parameters.AddWithValue("@idventa", idVenta);
-                    cmd.CommandType = System.Data.CommandType.Text;
-
-
-                    using (SqlDataReader dr = cmd.ExecuteReader())
-                    {
-                        while (dr.Read())
-                        {
-                            oLista.Add(new DETALLE_VENTA()
-                            {
-                                oPRODUCTO = new PRODUCTO() { Nombre = dr["Nombre"].ToString() },
-                                PrecioVenta = Convert.ToDecimal(dr["PrecioVenta"].ToString()),
-                                Cantidad = Convert.ToInt32(dr["Cantidad"].ToString()),
-                                SubTotal =  Convert.ToDecimal(dr["NombreCliente"].ToString())
-                            });
-                        }
-                    }
-                }
-                catch
-                {
-
-
-                }
+            { 
+               try
+               {
+                  conexion.Open();
+                  StringBuilder query = new StringBuilder();
+                  query.AppendLine("select p.Nombre, dv.PrecioVenta, dv.Cantidad, dv.SubTotal from DETALLE_VENTA dv");                                                        
+                  query.AppendLine("inner join PRODUCTO p on p.idPRODUCTO = dv.idPRODUCTO");
+                  query.AppendLine("where dv.idVENTA = @idventa");
+                  
+                  SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
+                  cmd.Parameters.AddWithValue("@idventa", idVenta);
+                  cmd.CommandType = System.Data.CommandType.Text;
+                  
+                  
+                  
+                  using (SqlDataReader dr = cmd.ExecuteReader())
+                  {
+                      while (dr.Read())
+                      {
+                          oLista.Add(new DETALLE_VENTA()
+                          {
+                              oPRODUCTO = new PRODUCTO() { Nombre = dr["Nombre"].ToString() },
+                              PrecioVenta = Convert.ToDecimal(dr["PrecioVenta"].ToString()),
+                              Cantidad = Convert.ToInt32(dr["Cantidad"].ToString()),
+                              SubTotal =  Convert.ToDecimal(dr["SubTotal"].ToString())
+                          });
+                      }
+                  }
+               }
+               catch
+               {
+                 oLista = new List<DETALLE_VENTA>();
+               }
             }
             return oLista;
         }

@@ -127,4 +127,7 @@
   <data name="Plantilla_compra" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plantilla compra.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Plantilla_venta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Plantilla venta.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

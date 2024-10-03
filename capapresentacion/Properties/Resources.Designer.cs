@@ -107,5 +107,33 @@ namespace capapresentacion.Properties {
                 return ResourceManager.GetString("Plantilla_compra", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;!--sistema creado por el canal yt codigo estudiante--&gt;
+        ///    &lt;title&gt;Web Page Design&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        table.border {
+        ///            border-collapse: collapse;
+        ///        }
+        ///
+        ///            table.border th {
+        ///                text-align: center;
+        ///                padding: 5px;
+        ///                border: 1px solid black;
+        ///            }
+        ///
+        ///            table.border td {
+        ///                text-align: center;
+        ///                padding: 5px;
+        ///                border: 1px solid b [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string Plantilla_venta {
+            get {
+                return ResourceManager.GetString("Plantilla_venta", resourceCulture);
+            }
+        }
     }
 }

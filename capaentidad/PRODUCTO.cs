@@ -18,7 +18,7 @@ namespace capaentidad
         public decimal PrecioCompra { get; set; }
         public decimal PrecioVenta { get; set; }
         public bool Estado { get; set; }
-        public String FechaRegistro { get; set; }
+        public string FechaRegistro { get; set; }
 
     }
 }
