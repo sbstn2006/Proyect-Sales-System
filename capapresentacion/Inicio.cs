@@ -8,29 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
-
 using capaentidad;
-
 using CapaNegocio;
+using capapresentacion.Modales;
 
 namespace capapresentacion
 {
     public partial class Inicio : Form
     {
-
         private static USUARIO USUARIOActual;
         private static IconMenuItem MenuActivo = null;
         private static Form FormularioActivo = null;
-
 
         public Inicio(USUARIO objUSUARIO = null)
         {
             if (objUSUARIO == null)
                 USUARIOActual = new USUARIO() { NombreCompleto = "ADMIN sin inicio", idUSUARIO = 1 };
             else
-                USUARIOActual = objUSUARIO;
+                USUARIOActual = objUSUARIO;    
 
-            InitializeComponent();
+            InitializeComponent();                
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -43,52 +40,11 @@ namespace capapresentacion
                 bool encontrado = ListaPermisos.Any(m => m.NombreMenu == iconmenu.Name);
                 if (encontrado == false)
                 {
-                    iconmenu.Visible = false; 
+                    iconmenu.Visible = false;
                 }
             }
-
-
             lblusuario.Text = USUARIOActual.NombreCompleto;
-
-
-
         }
-
-        private void iconMenuItem3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuusuarios_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void MenuCompras_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuReportes_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void AbrirFormulario(IconMenuItem menu, Form formulario ) {
             if (MenuActivo != null) {
@@ -182,6 +138,21 @@ namespace capapresentacion
         private void submenureporteventa_Click(object sender, EventArgs e)
         {
             AbrirFormulario(MenuReportes, new frmReporteVenta());
+        }
+
+        private void MenuAcercade_Click(object sender, EventArgs e)
+        {
+            mdAcercade md = new mdAcercade();
+            md.ShowDialog();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea salir?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+
+            }
         }
     }
 }

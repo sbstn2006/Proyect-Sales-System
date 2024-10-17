@@ -18,11 +18,12 @@ namespace capapresentacion
     {
         public frmReporteVenta()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         private void frmReporteVenta_Load(object sender, EventArgs e)
         {
+            
             List<CLIENTE> lista = new CN_CLIENTE().Listar();
 
             cboProveedor.Items.Add(new OpcionCombo() { Valor = 0, Texto = "TODOS" });
@@ -64,22 +65,22 @@ namespace capapresentacion
 
 
 
-            foreach (REPORTE_VENTA rc in lista)
+            foreach (REPORTE_VENTA rv in lista)
             {
                 dgvdata.Rows.Add(new object[] {
-                    rc.FechaRegistro,
-                    rc.TipoDocumento,
-                    rc.NumeroDocumento,
-                    rc.MontoTotal,
-                    rc.UsuarioRegistro,
-                    rc.DocumentoCliente,
-                    rc.NombreCliente,
-                    rc.CodigoProducto,
-                    rc.NombreProducto,
-                    rc.Categoria,
-                    rc.PrecioVenta,
-                    rc.Cantidad,
-                    rc.SubTotal
+                    rv.FechaRegistro,
+                    rv.TipoDocumento,
+                    rv.NumeroDocumento,
+                    rv.MontoTotal,
+                    rv.UsuarioRegistro,
+                    rv.DocumentoCliente,
+                    rv.NombreCliente,
+                    rv.CodigoProducto,
+                    rv.NombreProducto,
+                    rv.Categoria,
+                    rv.PrecioVenta,
+                    rv.Cantidad,
+                    rv.SubTotal
                 });
             }
         }

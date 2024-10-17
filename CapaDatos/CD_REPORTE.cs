@@ -18,8 +18,8 @@ namespace CapaDatos
 
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
             {
-               //try
-               //{
+               try
+               {
                     StringBuilder query = new StringBuilder();
                     SqlCommand cmd = new SqlCommand("PA_ReporteCompras", oconexion);
                     cmd.Parameters.AddWithValue("fechainicio", fechainicio );
@@ -54,11 +54,11 @@ namespace CapaDatos
                             });
                         }
                     }
-                //}
-                //catch (Exception ex)
-                //{
-                //    lista = new List<REPORTE_COMPRA>();
-                //}
+               }
+               catch (Exception ex)
+               {
+                   lista = new List<REPORTE_COMPRA>();
+               }
             }
             return lista;
         }
@@ -71,8 +71,8 @@ namespace CapaDatos
 
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
             {
-                //try
-                //{
+                try
+                {
                     StringBuilder query = new StringBuilder();
                     SqlCommand cmd = new SqlCommand("PA_ReporteVentas", oconexion);
                     cmd.Parameters.AddWithValue("fechainicio", fechainicio);
@@ -105,11 +105,11 @@ namespace CapaDatos
                             });
                         }
                     }
-                //}
-                //catch (Exception ex)
-                //{
-                //    lista = new List<REPORTE_VENTA>();
-                //}
+                }
+                catch (Exception ex)
+                {
+                    lista = new List<REPORTE_VENTA>();
+                }
             }
             return lista;
         }
