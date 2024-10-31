@@ -10,8 +10,7 @@ using System.Windows.Forms;
 
 using CapaNegocio;
 using capaentidad;
-    
-
+                                                                   
 namespace capapresentacion
 {
     public partial class login : Form
@@ -29,45 +28,29 @@ namespace capapresentacion
         private void iconButton1_Click(object sender, EventArgs e)
         {
             {
-
-
-                USUARIO oUSUARIO = new CN_USUARIO().Listar().Where(u => u.Documento == txtdocumento.Text
+                USUARIO oUSUARIO = new CN_USUARIO().Listar().Where(u => u.Documento == txtdocumento.Text                                   
                 && u.Clave == txtclave.Text).FirstOrDefault();
 
                 if (oUSUARIO != null)
                 {
-
-                    Inicio form = new Inicio(oUSUARIO);
-
-                    form.Show();
-                    this.Hide();
-
-                    form.FormClosing += frm_closing;
-
-                }
-                else {
-
+                    Inicio form = new Inicio(oUSUARIO);   
+                                                          
+                    form.Show();                          
+                    this.Hide();                          
+                                                          
+                    form.FormClosing += frm_closing;                                      
+                }                                         
+                else {                                    
                     MessageBox.Show("Usuario o contraseña invalida, intenta nuevamente","mensaje",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-                }
-
-                
+                }                                         
             }
-
         }
-
+        
 
         private void frm_closing(object sender, FormClosingEventArgs e) {
-
-
             txtdocumento.Text = "";
             txtclave.Text = "";
             this.Show();
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -7,7 +7,7 @@
     <ProjectGuid>{922936B7-7B32-44EF-847D-767E673A41EA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>capapresentacion</RootNamespace>
-    <AssemblyName>capapresentacion</AssemblyName>
+    <AssemblyName>SistemaVentasDemo</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo_93E_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
@@ -360,6 +363,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Plantilla venta.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo_93E_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
