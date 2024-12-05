@@ -316,7 +316,7 @@ namespace capapresentacion
 
                 }
                 SaveFileDialog savefile = new SaveFileDialog();
-                savefile.FileName = string.Format("ReporteProducto_{0}.xslx", DateTime.Now.ToString("ddMMyyyyHHmmss"));
+                savefile.FileName = string.Format("ReporteUsuarios_{0}.xslx", DateTime.Now.ToString("dd/MM/yyyy__HH:mm:ss"));
                 savefile.Filter = "Excel Files | *.xlsx";
 
                 if (savefile.ShowDialog() == DialogResult.OK)
